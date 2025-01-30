@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 const NavbarLinks = () => {
+  const { pathname } = useLocation();
   return (
-    <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 text-black lg:text-white font-medium">
+    <div className={`flex flex-col lg:flex-row gap-2 lg:gap-6  font-medium ${pathname === '/' ?
+      " text-black lg:text-white" : ''}`}>
       <NavLink
         to="/"
         className={({ isActive }) => isActive && 'text-blue-400 font-bold'}
