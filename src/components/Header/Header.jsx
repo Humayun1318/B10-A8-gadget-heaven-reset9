@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
 
 const Header = () => {
   return (
-    <div>
-      <h1>This is our header</h1>
+    <div className='border border-amber-950 my-4'>
+      <Navbar></Navbar>
     </div>
   );
 };
