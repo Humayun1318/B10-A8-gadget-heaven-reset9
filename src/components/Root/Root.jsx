@@ -5,9 +5,9 @@ import '../../App'
 
 const Root = () => {
   return (
-    <div>
+    <div className='bg-[#F6F6F6]'>
       <Header></Header>
-      <Outlet></Outlet>
+      <Outlet ></Outlet>
       <Footer></Footer>
     </div>
   );
