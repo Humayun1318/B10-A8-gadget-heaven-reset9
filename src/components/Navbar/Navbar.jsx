@@ -8,13 +8,13 @@ import { DataContext } from '../../Context/context';
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const { data } = useContext(DataContext)
+  const { data, addToCart, addFavorites } = useContext(DataContext)
   const categories = [...new Set(data.map((item) => (item.category).toLowerCase()))]
   const categoriesPath = categories.map(cat => "/category/" + cat)
 
   return (
-    <div className={` 'text-white w-11/12 mx-auto mb-12'
-    ${pathname === '/' || categoriesPath.includes(pathname) ? ' text-white' : 'sm:w-[90%] lg:w-[80%] mx-auto'}`}>
+    <div className={`
+    ${pathname === '/' || categoriesPath.includes(pathname) ? 'w-11/12 text-white mx-auto' : 'sm:w-[90%] lg:w-[80%] mx-auto'}`}>
       <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -35,8 +35,22 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end text-white">
-          <IoCartOutline className='text-black bg-white mr-4 text-4xl p-2 rounded-full' />
-          <CiHeart className='text-black bg-white text-4xl p-2 rounded-full' />
+          <p className='text-black bg-white mr-4 text-2xl p-2 rounded-full relative'>
+            {
+              addToCart.length > 0 ? <span className='absolute -top-3 -right-2 bg-black text-white rounded-full 
+              h-[24px] w-[24px] flex justify-center items-center font-medium p-3'> {addToCart.length} </span>
+                : ''
+            }
+            <IoCartOutline className='' />
+          </p>
+          <p className='text-black bg-white mr-4 text-2xl p-2 rounded-full relative'>
+            {
+              addFavorites.length > 0 ?
+                <span className='absolute -top-3 -right-2 bg-black text-white rounded-full h-[24px] w-[24px] flex justify-center items-center font-medium p-3'> {addFavorites.length} </span>
+                : ''
+            }
+            <CiHeart className='' />
+          </p>
         </div>
       </div>
     </div>

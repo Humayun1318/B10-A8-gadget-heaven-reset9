@@ -1,12 +1,49 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { DataContext } from "../../Context/context";
+import { useNavigate } from "react-router-dom";
+
 
 
 const DataProvider = ({ children }) => {
   const [data, setData] = useState(null)
+  const [addToCart, setAddToCart] = useState([])
+  const [addFavorites, setAddFavorites] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+
+
+  const handleAddToCart = (productId => {
+    const newProd = data.find(p => p.product_id === productId)
+
+    if (newProd) {
+      if (addToCart.length > 0) {
+        const uniqueProds = addToCart.some(p => p.product_id === productId)
+        if (uniqueProds) {
+          console.log('already exist');
+          return;
+        }
+        setAddToCart([...addToCart, newProd])
+      }
+      setAddToCart([...addToCart, newProd])
+    }
+  })
+  const handleAddToFavorite = (productId => {
+    const newFavoriteProd = data.find(p => p.product_id === productId)
+
+    if (newFavoriteProd) {
+      if (addFavorites.length > 0) {
+        const uniqueFavProds = addFavorites.some(p => p.product_id === productId)
+        if (uniqueFavProds) {
+          console.log('already exist');
+          return;
+        }
+        setAddFavorites([...addFavorites, newFavoriteProd])
+      }
+      setAddFavorites([...addFavorites, newFavoriteProd])
+    }
+  })
 
   useEffect(() => {
 
@@ -32,7 +69,7 @@ const DataProvider = ({ children }) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <DataContext.Provider value={{ data, loading, error, setData }}>
+    <DataContext.Provider value={{ data, loading, error, handleAddToCart, addToCart, handleAddToFavorite, addFavorites }}>
       {children}
     </DataContext.Provider>
   );

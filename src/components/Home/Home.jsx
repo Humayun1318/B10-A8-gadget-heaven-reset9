@@ -21,7 +21,7 @@ const Home = () => {
             <img src={bannerImg} alt="" className='rounded-3xl h-full w-full object-cover' />
           </div>
           {/* Dynamic card */}
-          <section className='sm:w-[90%] lg:w-[80%] mx-auto  mt-8 mb-40'>
+          <section className='sm:w-[90%] lg:w-[80%] mx-auto  mt-8 mb-40 px-8 sm:px-0'>
             <h2 className='text-center text-2xl lg:text-4xl font-bold text-[#0B0B0B] mb-10'>Explore Cutting-Edge Gadgets</h2>
             {/* card container */}
             <div className='flex gap-6 flex-col lg:flex-row'>

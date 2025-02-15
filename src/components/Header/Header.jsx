@@ -14,7 +14,7 @@ const Header = () => {
   
   return (
     <div className=' bg-[#fff]'>
-      <div className={`${pathname === '/' || categoriesPath.includes(pathname) ? 'bg-[#9538E2] border-7 border-[#F6F6F6] rounded-4xl  h-[700px] lg:mr-8 lg:ml-8 lg:mt-8' : ' my-6 border '}`}>
+      <div className={`${pathname === '/' || categoriesPath.includes(pathname) ? 'bg-[#9538E2] border-7 border-[#F6F6F6] rounded-4xl  h-[700px] lg:mr-8 lg:ml-8 lg:mt-8' : ' mt-6 border '}`}>
         <Navbar></Navbar>
       </div>
     </div>
