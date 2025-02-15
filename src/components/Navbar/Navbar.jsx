@@ -1,14 +1,20 @@
 
+import { useContext } from 'react';
 import NavbarLinks from './NavLinks';
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { useLocation } from 'react-router-dom';
+import { DataContext } from '../../Context/context';
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const { data } = useContext(DataContext)
+  const categories = [...new Set(data.map((item) => (item.category).toLowerCase()))]
+  const categoriesPath = categories.map(cat => "/category/" + cat)
 
   return (
-    <div className={pathname === '/' ? 'text-white w-11/12 mx-auto mb-12' : ' sm:w-[90%] lg:w-[80%] mx-auto'}>
+    <div className={` 'text-white w-11/12 mx-auto mb-12'
+    ${pathname === '/' || categoriesPath.includes(pathname) ? ' text-white' : 'sm:w-[90%] lg:w-[80%] mx-auto'}`}>
       <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">

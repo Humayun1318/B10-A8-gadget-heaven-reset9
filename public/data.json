@@ -1,0 +1,334 @@
+[
+  {
+    "product_id": "PH001",
+    "product_title": "iPhone 14 Pro Max",
+    "product_image": "./iPhone14ProMax.jpeg",
+    "category": "Phones",
+    "price": 1099.99,
+    "description": "Powerful Apple smartphone with the latest features.",
+    "Specification": [
+      "6.7-inch Super Retina XDR",
+      "128GB storage",
+      "5G enabled",
+      "A16 Bionic chip"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "Brand": "Apple"
+  },
+  {
+    "product_id": "PH002",
+    "product_title": "Samsung Galaxy S23 Ultra",
+    "product_image": "./Samsung_Galaxy_S23_ULtra51.jpg",
+    "category": "Phones",
+    "price": 1199.99,
+    "description": "Samsung's flagship phone with an advanced camera system.",
+    "Specification": [
+      "6.8-inch AMOLED",
+      "512GB storage",
+      "200MP camera",
+      "Snapdragon 8 Gen 2"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "Brand": "Samsung"
+  },
+  {
+    "product_id": "PH003",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "./GooglePixel7Pro.jpeg",
+    "category": "Phones",
+    "price": 899.99,
+    "description": "Google’s premium phone with AI-powered features.",
+    "Specification": [
+      "6.7-inch OLED",
+      "256GB storage",
+      "50MP main camera",
+      "Tensor G2 chip"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "Brand": "Google"
+  },
+  {
+    "product_id": "PH004",
+    "product_title": "OnePlus 11",
+    "product_image": "./OnePlus-11.jpeg",
+    "category": "Phones",
+    "price": 799.99,
+    "description": "OnePlus phone with Hasselblad-tuned cameras and fast performance.",
+    "Specification": [
+      "6.7-inch QHD+ AMOLED",
+      "256GB storage",
+      "50MP Camera",
+      "Snapdragon 8 Gen 2"
+    ],
+    "availability": true,
+    "rating": 4.6,
+    "Brand": "OnePlus"
+  },
+  {
+    "product_id": "PH005",
+    "product_title": "Xiaomi 13 Pro",
+    "product_image": "./Xiaomi-13-Pro-Mountain-Blue-7027.jpg",
+    "category": "Phones",
+    "price": 999.99,
+    "description": "Xiaomi’s flagship with Leica-powered cameras.",
+    "Specification": [
+      "6.73-inch LTPO AMOLED",
+      "256GB storage",
+      "50MP Camera",
+      "Snapdragon 8 Gen 2"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "Brand": "Xiaomi"
+  },
+  {
+    "product_id": "PH006",
+    "product_title": "Sony Xperia 1 IV",
+    "product_image": "./sony-xperia-1-iv-.jpg",
+    "category": "Phones",
+    "price": 1299.99,
+    "description": "Sony’s premium smartphone with a 4K OLED display.",
+    "Specification": [
+      "6.5-inch 4K OLED",
+      "256GB storage",
+      "12MP triple lens",
+      "Snapdragon 8 Gen 1"
+    ],
+    "availability": true,
+    "rating": 4.5,
+    "Brand": "Sony"
+  },
+  {
+    "product_id": "SW001",
+    "product_title": "Apple Watch Ultra",
+    "product_image": "./AppleWatchUltra.jpg",
+    "category": "Smartwatches",
+    "price": 799.99,
+    "description": "Advanced Apple Watch with rugged design.",
+    "Specification": [
+      "49mm display",
+      "Dual GPS",
+      "Water-resistant 100m"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "Battery Life": "36 hours"
+  },
+  {
+    "product_id": "SW002",
+    "product_title": "Samsung Galaxy Watch 5",
+    "product_image": "./SamsungGalaxyWatch5.jpeg",
+    "category": "Smartwatches",
+    "price": 349.99,
+    "description": "Samsung smartwatch with advanced health tracking.",
+    "Specification": [
+      "44mm display",
+      "ECG monitoring",
+      "Water-resistant"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "Battery Life": "40 hours"
+  },
+  {
+    "product_id": "SW003",
+    "product_title": "Garmin Fenix 7X",
+    "product_image": "./GarminFenix7X.jpeg",
+    "category": "Smartwatches",
+    "price": 899.99,
+    "description": "High-end sports smartwatch with GPS tracking.",
+    "Specification": [
+      "51mm display",
+      "Advanced fitness tracking",
+      "Multi-band GPS"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "Battery Life": "Up to 30 days"
+  },
+  {
+    "product_id": "AC001",
+    "product_title": "Apple AirPods Pro (2nd Gen)",
+    "product_image": "./AppleAirPodsPro(2nd Gen).jpg",
+    "category": "Accessories",
+    "price": 249.99,
+    "description": "High-quality noise-canceling earbuds.",
+    "Specification": [
+      "Active Noise Cancellation",
+      "Transparency Mode",
+      "MagSafe Charging"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "Brand": "Apple"
+  },
+  {
+    "product_id": "AC002",
+    "product_title": "Samsung Galaxy Buds 2 Pro",
+    "product_image": "./SamsungGalaxyBuds2Pro.jpg",
+    "category": "Accessories",
+    "price": 199.99,
+    "description": "Samsung’s premium wireless earbuds.",
+    "Specification": [
+      "Hi-Fi Sound",
+      "Active Noise Cancellation",
+      "Bluetooth 5.2"
+    ],
+    "availability": true,
+    "rating": 4.6,
+    "Brand": "Samsung"
+  },
+  {
+    "product_id": "AC003",
+    "product_title": "Logitech MX Master 3",
+    "product_image": "./LogitechMXMaster3.jpg",
+    "category": "Accessories",
+    "price": 99.99,
+    "description": "Premium ergonomic wireless mouse with precision tracking.",
+    "Specification": [
+      "Hyper-fast scrolling",
+      "USB-C charging",
+      "Multi-device support"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "Brand": "Logitech"
+  },
+  {
+    "product_id": "MO001",
+    "product_title": "LG UltraFine 5K",
+    "product_image": "./LGUltraFine5K.jpeg",
+    "category": "Monitors",
+    "price": 1299.99,
+    "description": "5K Retina display monitor for professionals.",
+    "Specification": [
+      "27-inch 5K",
+      "USB-C connectivity",
+      "Wide color gamut"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "Brand": "LG"
+  },
+  {
+    "product_id": "MO002",
+    "product_title": "Dell UltraSharp U3223QE",
+    "product_image": "./DellUltraSharpU3223QE.jpeg",
+    "category": "Monitors",
+    "price": 799.99,
+    "description": "32-inch 4K UHD monitor with IPS technology.",
+    "Specification": [
+      "4K UHD",
+      "100% sRGB",
+      "USB-C hub"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "Brand": "Dell"
+  },
+  {
+    "product_id": "LP001",
+    "product_title": "Dell XPS 15",
+    "product_image": "./DellXPS15.jpg",
+    "category": "Laptops",
+    "price": 1499.99,
+    "description": "High-performance Dell laptop with 4K display.",
+    "Specification": [
+      "15.6-inch 4K OLED",
+      "Intel Core i7",
+      "16GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "Brand": "Dell"
+  },
+  {
+    "product_id": "LP002",
+    "product_title": "HP Spectre x360",
+    "product_image": "./HPSpectrex360.jpeg",
+    "category": "Laptops",
+    "price": 1399.99,
+    "description": "Convertible HP laptop with touch screen.",
+    "Specification": [
+      "13.3-inch OLED",
+      "Intel Core i7",
+      "16GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "Brand": "HP"
+  },
+  {
+    "product_id": "LP003",
+    "product_title": "Asus ROG Zephyrus G15",
+    "product_image": "./AsusROGZephyrusG15.jpeg",
+    "category": "Laptops",
+    "price": 1799.99,
+    "description": "Gaming laptop with high refresh rate display.",
+    "Specification": [
+      "15.6-inch QHD 165Hz",
+      "AMD Ryzen 9",
+      "32GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "Brand": "Asus"
+  },
+  {
+    "product_id": "MB001",
+    "product_title": "MacBook Air M2",
+    "product_image": "./MacBook-Air-M2-Silver-8305.jpg",
+    "category": "MacBooks",
+    "price": 1199.99,
+    "description": "Lightweight MacBook with Apple M2 chip.",
+    "Specification": [
+      "13.6-inch Retina",
+      "M2 chip",
+      "8GB RAM",
+      "256GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "Brand": "Apple"
+  },
+  {
+    "product_id": "MB002",
+    "product_title": "MacBook Pro 14-inch M2 Pro",
+    "product_image": "./MacBookPro14-inchM2Pro.jpeg",
+    "category": "MacBooks",
+    "price": 1999.99,
+    "description": "Powerful MacBook for professionals.",
+    "Specification": [
+      "14.2-inch Liquid Retina XDR",
+      "M2 Pro chip",
+      "16GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "Brand": "Apple"
+  },
+  {
+    "product_id": "MB003",
+    "product_title": "MacBook Pro 16-inch M2 Max",
+    "product_image": "./MacBookPro16-inchM2Max.jpeg",
+    "category": "MacBooks",
+    "price": 2999.99,
+    "description": "Apple’s most powerful MacBook with M2 Max chip.",
+    "Specification": [
+      "16.2-inch Liquid Retina XDR",
+      "M2 Max chip",
+      "32GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "Brand": "Apple"
+  }
+]
