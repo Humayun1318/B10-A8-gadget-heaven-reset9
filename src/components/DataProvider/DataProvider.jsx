@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { DataContext } from "../../Context/context";
-import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -11,10 +11,16 @@ const DataProvider = ({ children }) => {
   const [addFavorites, setAddFavorites] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [totalCost, setTotalCost] = useState(0)
 
 
+  // const handleRemoveCartItem = (prodId) => {
+  //   console.log(prodId);
+  //   const remCartItem = addToCart.filter(p => p.product_id !== prodId)
+  //   setAddToCart(remCartItem)
+  // }
 
-  const handleAddToCart = (productId => {
+  const handleAddToCart = ((productId, price) => {
     const newProd = data.find(p => p.product_id === productId)
 
     if (newProd) {
@@ -25,9 +31,12 @@ const DataProvider = ({ children }) => {
           return;
         }
         setAddToCart([...addToCart, newProd])
+        setTotalCost(price + totalCost)
       }
       setAddToCart([...addToCart, newProd])
+      setTotalCost(price + totalCost)
     }
+    
   })
   const handleAddToFavorite = (productId => {
     const newFavoriteProd = data.find(p => p.product_id === productId)
@@ -69,7 +78,7 @@ const DataProvider = ({ children }) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <DataContext.Provider value={{ data, loading, error, handleAddToCart, addToCart, handleAddToFavorite, addFavorites }}>
+    <DataContext.Provider value={{ data, loading, error, handleAddToCart, addToCart, handleAddToFavorite, addFavorites, totalCost, setAddToCart, setTotalCost, setAddFavorites }}>
       {children}
     </DataContext.Provider>
   );

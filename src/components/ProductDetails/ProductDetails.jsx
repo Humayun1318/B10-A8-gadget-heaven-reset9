@@ -66,7 +66,7 @@ const ProductDetails = () => {
                 <span className="px-3.5 py-1.5 rounded-4xl bg-[#09080F0D] ml-3">{singleProd?.rating}</span></p>
               <div className="flex">
                 <button className="mr-4 flex items-center gap-3 px-3 lg:px-5 py-0 lg:py-2.5 bg-[#9538E2] rounded-4xl text-white text-lg font-bold shadow cursor-pointer"
-                  onClick={() => handleAddToCart(singleProd?.product_id)}
+                  onClick={() => handleAddToCart(singleProd?.product_id, singleProd?.price)}
                 >Add To Card
                   <IoCartOutline className='' />
                 </button>
