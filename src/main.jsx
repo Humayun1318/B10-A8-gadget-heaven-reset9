@@ -48,11 +48,11 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         children: [
           {
-            path: '/',
+            index: true,
             element: <Categories></Categories>
           },
           {
-            path: `/category/:category`,
+            path: `category/:category`,
             element: <Categories></Categories>
           }
         ]
@@ -62,11 +62,11 @@ const router = createBrowserRouter([
         element: <ProductDetails></ProductDetails>
       },
       {
-        path: "/statistics",
+        path: "statistics",
         element: <Statistics></Statistics>,
       },
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <Dashboard></Dashboard>,
       },
     ]

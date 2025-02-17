@@ -2,16 +2,15 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { DataContext } from "../../Context/context";
 import { MdDelete } from "react-icons/md";
+import { Dialog, DialogTitle } from "@headlessui/react";
+import purchaseIcon from '../../assets/Group.png'
 
 const Dashboard = () => {
   const { addToCart, totalCost, setAddToCart, setTotalCost, addFavorites, handleAddToCart, setAddFavorites, active, setActive } = useContext(DataContext)
   const [cart, setCart] = useState([])
   const [wishlist, setWishlist] = useState([])
-
-  
-
-
-  console.log('dasboard:', cart);
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalTotalCost, setModalTotalCost] = useState(0);
 
   const handleRemoveItem = (prodId, price, cartType) => {
     if (cartType === 'cart') {
@@ -26,6 +25,20 @@ const Dashboard = () => {
     }
   }
 
+  const handleSorting = () => {
+    const re = cart.sort((a, b) => (b.price - a.price))
+    setCart([...re])
+  }
+
+  const handlePurchase = (purchasingCost) => {
+    setModalTotalCost(purchasingCost);
+    setIsOpen(true);
+    setTotalCost(totalCost - purchasingCost);
+    setAddToCart([])
+    setCart([])
+  }
+
+
   useEffect(() => {
     if (addToCart.length) {
       setCart([...addToCart])
@@ -37,6 +50,15 @@ const Dashboard = () => {
 
   return (
     <div className="">
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 flex items-center justify-center ">
+        <div className="fixed inset-0 bg-black opacity-50"></div>
+        <div className="bg-white p-8 rounded-lg shadow-lg z-10">
+          <img src={purchaseIcon} alt="" className="mx-auto" />
+          <DialogTitle className="text-2xl font-bold text-[#09080F] my-6">Payment Successfully!</DialogTitle>
+          <p className="w-3/4 mx-auto text-[#09080F99] font-medium">Thanks for purchasing.Total:{modalTotalCost}</p>
+          <button onClick={() => setIsOpen(false)} className="mt-4 bg-gray-400 rounded-4xl px-5 py-2.5 text-[#09080F] font-semibold w-full cursor-pointer hover:bg-gray-500">Close</button>
+        </div>
+      </Dialog>
       <div className=" w-full bg-[#9538E2] py-8 text-center px-4">
         <h5 className="text-2xl lg:text-3xl font-bold text-white">Dashboard</h5>
         <p className="mt-4 mb-8 text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
@@ -60,12 +82,19 @@ const Dashboard = () => {
             <p className="text-2xl font-bold text-[#0B0B0B]">Total Cost:$
               {parseFloat(totalCost.toFixed(2))}</p>
             <button className={`px-5 py-3.5 rounded-4xl border-[1.5px] border-solid border-black shadow-inner text-lg font-semibold
-             text-[#9538E2]`}>Sort by Price</button>
-            <button className="px-5 py-3.5 rounded-4xl border-[1.5px] border-solid border-black shadow-inner text-lg font-semibold
-             bg-[#9538E2] text-white">Purchase</button>
+             text-[#9538E2] cursor-pointer duration-300 hover:bg-[#9538e25c] `}
+              onClick={handleSorting}
+            >Sort by Price</button>
+            <button className={`px-5 py-3.5 rounded-4xl border-[1.5px] border-solid border-black shadow-inner text-lg font-semibold
+             bg-[#9538E2] text-white  ${totalCost === 0 || totalCost < 0 ? "bg-red-100 text-red-500 cursor-not-allowed" : "duration-300 hover:bg-[#9538e25c]"}`}
+              disabled={totalCost === 0 || totalCost < 0 ? true : false}
+              onClick={() => handlePurchase(totalCost)}
+            >Purchase</button>
 
           </div>
+
         </div>
+
 
         <div className="mt-8 space-y-6 mx-4 sm:mx-0">
           {/* cart */}
