@@ -9,7 +9,7 @@ import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 const ProductDetails = () => {
   const { productId } = useParams()
-  const { data, handleAddToCart, handleAddToFavorite } = useContext(DataContext)
+  const { data, handleAddToCart, handleAddToFavorite, isClicked } = useContext(DataContext)
   const singleProd = data.find(prod => prod.product_id === productId)
 
   const fullStars = Math.floor(singleProd?.rating);
@@ -65,12 +65,14 @@ const ProductDetails = () => {
                 }
                 <span className="px-3.5 py-1.5 rounded-4xl bg-[#09080F0D] ml-3">{singleProd?.rating}</span></p>
               <div className="flex">
-                <button className="mr-4 flex items-center gap-3 px-3 lg:px-5 py-0 lg:py-2.5 bg-[#9538E2] rounded-4xl text-white text-lg font-bold shadow cursor-pointer"
+                <button className="mr-4 flex items-center gap-3 px-3 lg:px-5 py-0 lg:py-2.5 bg-[#9538E2] rounded-4xl text-white text-lg font-bold shadow cursor-pointer hover:bg-[#9538e2ef]"
                   onClick={() => handleAddToCart(singleProd?.product_id, singleProd?.price)}
                 >Add To Card
                   <IoCartOutline className='' />
                 </button>
-                <button className="px-3 lg:px-5 py-1 lg:py-3 rounded-4xl border border-solid border-[#09080F0D] shadow cursor-pointer"
+                <button className={`px-3 lg:px-5 py-1 lg:py-3 rounded-4xl border border-solid border-[#09080F0D] shadow 
+                ${isClicked.includes(singleProd?.product_id) ? "bg-red-100 text-red-500 cursor-not-allowed" : "hover:bg-gray-200 text-gray-500"}`}
+                  disabled={isClicked.includes(singleProd?.product_id)}
                   onClick={() => handleAddToFavorite(singleProd?.product_id)}
                 >
                   <CiHeart className='text-2xl' />

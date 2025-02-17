@@ -12,7 +12,8 @@ const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [totalCost, setTotalCost] = useState(0)
-
+  const [isClicked, setIsClicked] = useState([]);
+  const [active, setActive] = useState(true)
 
   // const handleRemoveCartItem = (prodId) => {
   //   console.log(prodId);
@@ -38,7 +39,8 @@ const DataProvider = ({ children }) => {
     }
     
   })
-  const handleAddToFavorite = (productId => {
+  const handleAddToFavorite = ((productId) => {
+    setIsClicked([...isClicked, productId]);
     const newFavoriteProd = data.find(p => p.product_id === productId)
 
     if (newFavoriteProd) {
@@ -78,7 +80,7 @@ const DataProvider = ({ children }) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <DataContext.Provider value={{ data, loading, error, handleAddToCart, addToCart, handleAddToFavorite, addFavorites, totalCost, setAddToCart, setTotalCost, setAddFavorites }}>
+    <DataContext.Provider value={{ data, loading, error, handleAddToCart, addToCart, handleAddToFavorite, addFavorites, totalCost, setAddToCart, setTotalCost, setAddFavorites, isClicked, active, setActive }}>
       {children}
     </DataContext.Provider>
   );

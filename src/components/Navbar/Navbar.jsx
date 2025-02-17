@@ -3,14 +3,24 @@ import { useContext } from 'react';
 import NavbarLinks from './NavLinks';
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
-import { useLocation } from 'react-router-dom';
+import {  useLocation, useNavigate } from 'react-router-dom';
 import { DataContext } from '../../Context/context';
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const { data, addToCart, addFavorites } = useContext(DataContext)
+  const navigate = useNavigate()
+  const { data, addToCart, addFavorites, setActive } = useContext(DataContext)
   const categories = [...new Set(data.map((item) => (item.category).toLowerCase()))]
   const categoriesPath = categories.map(cat => "/category/" + cat)
+
+  const navigateToDashboard = () => {
+    setActive(true)
+    navigate('/dashboard')
+  }
+  const navigateToDashboardWishlist = () => {
+    setActive(false)
+    navigate('/dashboard')
+  }
 
   return (
     <div className={`
@@ -35,7 +45,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end text-white">
-          <p className='text-black bg-white mr-4 text-2xl p-2 rounded-full relative'>
+          <p className='text-black bg-white mr-4 text-2xl p-2 rounded-full relative cursor-pointer'
+            onClick={navigateToDashboard}
+          >
             {
               addToCart.length > 0 ? <span className='absolute -top-3 -right-2 bg-black text-white rounded-full 
               h-[24px] w-[24px] flex justify-center items-center font-medium p-3'> {addToCart.length} </span>
@@ -43,7 +55,7 @@ const Navbar = () => {
             }
             <IoCartOutline className='' />
           </p>
-          <p className='text-black bg-white mr-4 text-2xl p-2 rounded-full relative'>
+          <p className='text-black bg-white mr-4 text-2xl p-2 rounded-full relative cursor-pointer' onClick={navigateToDashboardWishlist}>
             {
               addFavorites.length > 0 ?
                 <span className='absolute -top-3 -right-2 bg-black text-white rounded-full h-[24px] w-[24px] flex justify-center items-center font-medium p-3'> {addFavorites.length} </span>

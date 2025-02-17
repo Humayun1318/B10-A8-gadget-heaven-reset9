@@ -4,11 +4,11 @@ import { DataContext } from "../../Context/context";
 import { MdDelete } from "react-icons/md";
 
 const Dashboard = () => {
-  const { addToCart, totalCost, setAddToCart, setTotalCost, addFavorites, handleAddToCart, setAddFavorites } = useContext(DataContext)
+  const { addToCart, totalCost, setAddToCart, setTotalCost, addFavorites, handleAddToCart, setAddFavorites, active, setActive } = useContext(DataContext)
   const [cart, setCart] = useState([])
   const [wishlist, setWishlist] = useState([])
 
-  const [active, setActive] = useState(true)
+  
 
 
   console.log('dasboard:', cart);
