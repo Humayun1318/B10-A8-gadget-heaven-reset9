@@ -4,6 +4,7 @@ import { DataContext } from "../../Context/context";
 import { MdDelete } from "react-icons/md";
 import { Dialog, DialogTitle } from "@headlessui/react";
 import purchaseIcon from '../../assets/Group.png'
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const { addToCart, totalCost, setAddToCart, setTotalCost, addFavorites, handleAddToCart, setAddFavorites, active, setActive } = useContext(DataContext)
@@ -11,6 +12,8 @@ const Dashboard = () => {
   const [wishlist, setWishlist] = useState([])
   const [isOpen, setIsOpen] = useState(false);
   const [modalTotalCost, setModalTotalCost] = useState(0);
+
+  const navigate =  useNavigate()
 
   const handleRemoveItem = (prodId, price, cartType) => {
     if (cartType === 'cart') {
@@ -30,7 +33,7 @@ const Dashboard = () => {
     setCart([...re])
   }
 
-  const handlePurchase = (purchasingCost) => {
+  const handlePurchaseModalOpen = (purchasingCost) => {
     setModalTotalCost(purchasingCost);
     setIsOpen(true);
     setTotalCost(totalCost - purchasingCost);
@@ -38,6 +41,10 @@ const Dashboard = () => {
     setCart([])
   }
 
+  const handleCloseModal = () => {
+    setIsOpen(false)
+    navigate('/')
+  }
 
   useEffect(() => {
     if (addToCart.length) {
@@ -52,11 +59,11 @@ const Dashboard = () => {
     <div className="">
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 flex items-center justify-center ">
         <div className="fixed inset-0 bg-black opacity-50"></div>
-        <div className="bg-white p-8 rounded-lg shadow-lg z-10">
+        <div className="bg-white p-8 rounded-2xl shadow-lg z-10">
           <img src={purchaseIcon} alt="" className="mx-auto" />
           <DialogTitle className="text-2xl font-bold text-[#09080F] my-6">Payment Successfully!</DialogTitle>
-          <p className="w-3/4 mx-auto text-[#09080F99] font-medium">Thanks for purchasing.Total:{modalTotalCost}</p>
-          <button onClick={() => setIsOpen(false)} className="mt-4 bg-gray-400 rounded-4xl px-5 py-2.5 text-[#09080F] font-semibold w-full cursor-pointer hover:bg-gray-500">Close</button>
+          <p className="w-3/4 mx-auto text-[#09080F99] font-medium">Thanks for purchasing.Total:${modalTotalCost}</p>
+          <button onClick={() => handleCloseModal(totalCost)} className="mt-4 bg-gray-400 rounded-4xl px-5 py-2.5 text-[#09080F] font-semibold w-full cursor-pointer hover:bg-gray-500">Close</button>
         </div>
       </Dialog>
       <div className=" w-full bg-[#9538E2] py-8 text-center px-4">
@@ -88,7 +95,7 @@ const Dashboard = () => {
             <button className={`px-5 py-3.5 rounded-4xl border-[1.5px] border-solid border-black shadow-inner text-lg font-semibold
              bg-[#9538E2] text-white  ${totalCost === 0 || totalCost < 0 ? "bg-red-100 text-red-500 cursor-not-allowed" : "duration-300 hover:bg-[#9538e25c]"}`}
               disabled={totalCost === 0 || totalCost < 0 ? true : false}
-              onClick={() => handlePurchase(totalCost)}
+              onClick={() => handlePurchaseModalOpen(totalCost)}
             >Purchase</button>
 
           </div>
