@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { Dialog, DialogTitle } from "@headlessui/react";
 import purchaseIcon from '../../assets/Group.png'
 import { useNavigate } from "react-router-dom";
+import { infoToast } from "../Toasts/ReactToastify";
 
 const Dashboard = () => {
   const { addToCart, totalCost, setAddToCart, setTotalCost, addFavorites, handleAddToCart, setAddFavorites, active, setActive } = useContext(DataContext)
@@ -17,11 +18,13 @@ const Dashboard = () => {
 
   const handleRemoveItem = (prodId, price, cartType) => {
     if (cartType === 'cart') {
+      infoToast('Deleted the item from cart!')
       const remCartItem = cart.filter(p => p.product_id !== prodId)
-      setCart(remCartItem)
-      setAddToCart(remCartItem)
+      setCart([...remCartItem])
+      setAddToCart([...remCartItem])
       setTotalCost(totalCost - price)
     } else if (cartType === 'wishlist') {
+      infoToast('Deleted the item from wishlist!')
       const remWishlistItem = wishlist.filter(p => p.product_id !== prodId)
       setWishlist(remWishlistItem)
       setAddFavorites(remWishlistItem)
@@ -63,7 +66,7 @@ const Dashboard = () => {
           <img src={purchaseIcon} alt="" className="mx-auto" />
           <DialogTitle className="text-2xl font-bold text-[#09080F] my-6">Payment Successfully!</DialogTitle>
           <p className="w-3/4 mx-auto text-[#09080F99] font-medium">Thanks for purchasing.Total:${modalTotalCost}</p>
-          <button onClick={() => handleCloseModal(totalCost)} className="mt-4 bg-gray-400 rounded-4xl px-5 py-2.5 text-[#09080F] font-semibold w-full cursor-pointer hover:bg-gray-500">Close</button>
+          <button onClick={() => handleCloseModal(totalCost)} className="mt-4 bg-gray-200 rounded-4xl px-5 py-2.5 text-[#09080F] font-semibold w-full cursor-pointer duration-300 hover:bg-gray-400">Close</button>
         </div>
       </Dialog>
       <div className=" w-full bg-[#9538E2] py-8 text-center px-4">

@@ -15,6 +15,7 @@ import Statistics from './components/Statistics/Statistics';
 import Dashboard from './components/Dashboard/Dashboard';
 import Categories from './components/Home/Categories/Categories';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import { HelmetProvider } from 'react-helmet-async';
 
 const rootLoader = async () => {
   try {
@@ -81,6 +82,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>,
 )

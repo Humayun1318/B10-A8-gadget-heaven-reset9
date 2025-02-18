@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../../Context/context";
 import { CiHeart } from "react-icons/ci";
@@ -14,7 +14,7 @@ const ProductDetails = () => {
 
   const fullStars = Math.floor(singleProd?.rating);
   const hasHalfStar = singleProd?.rating % 1 >= 0.5;
-  // console.log({fullStars, hasHalfStar});
+  
 
   return (
     <div className="relative">
