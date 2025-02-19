@@ -1,7 +1,8 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import bannerImg from '../../assets/banner.jpg'
 import Sidebar from './Sidebar/Sidebar';
 import Banner from '../Banner/Banner';
+import { Button } from '@headlessui/react';
 
 
 const Home = () => {
@@ -12,6 +13,17 @@ const Home = () => {
  
   return (
     <div className='-mt-[600px] '>
+      <div className='text-center bg-white mb-6 space-y-6 opacity-70'>
+        <Link to=""
+          className='font-extrabold text-5xl'>➡️Today's Hot Deals! Click Me!▶️</Link>
+        {/* <Button className='mb-4 '>
+          <Link to="/deals"
+            className='rounded-2xl bg-gray-400 py-4 px-8'
+          >See All Deals
+          </Link>
+        </Button> */}
+      </div>
+
       <div className='mb-8'>
         <Banner></Banner>
       </div>

@@ -17,23 +17,7 @@ import Categories from './components/Home/Categories/Categories';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import { HelmetProvider } from 'react-helmet-async';
 
-const rootLoader = async () => {
-  try {
-    console.log("Fetching data in loader...");
-    const res = await fetch("/data.json");
 
-    if (!res.ok) {
-      console.error("Fetch error:", res.statusText);
-      return null; // Prevents throwing an error that triggers ErrorPage
-    }
-
-    const jsonData = await res.json();
-    return jsonData;  // Ensure loader returns the fetched data
-  } catch (error) {
-    console.error("Loader Error:", error);
-    return null;  // Prevents breaking hydration
-  }
-};
 
 
 
@@ -72,11 +56,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-  {
-    path: "/hire",
-    element: <Hire></Hire>,
-  }
-
 ]);
 
 
