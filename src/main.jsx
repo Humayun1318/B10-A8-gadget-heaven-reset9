@@ -16,6 +16,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Categories from './components/Home/Categories/Categories';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import { HelmetProvider } from 'react-helmet-async';
+import DealsPage from './components/Deals&discount/DealsPage';
 
 
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "deals",
+        element: <DealsPage></DealsPage>,
       },
     ]
   },

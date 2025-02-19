@@ -14,8 +14,12 @@ const Home = () => {
   return (
     <div className='-mt-[600px] '>
       <div className='text-center bg-white mb-6 space-y-6 opacity-70'>
-        <Link to=""
-          className='font-extrabold text-5xl'>➡️Today's Hot Deals! Click Me!▶️</Link>
+        <Link to="deals"
+          className='font-extrabold text-5xl'>
+          <span>▶️Click Me! </span>
+          Today's Hot Deals!     
+          <span>Click Me!▶️ </span>
+        </Link>
         {/* <Button className='mb-4 '>
           <Link to="/deals"
             className='rounded-2xl bg-gray-400 py-4 px-8'
