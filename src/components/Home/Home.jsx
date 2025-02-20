@@ -19,7 +19,7 @@ const Home = () => {
             ▶️ Click Me!
             <span>🔥 Today's Hot Deals! 🔥"</span>
             <span>Limited Time Offer! Hurry Up! 🚀</span>
-            <span>💥 Grab the Best Deals Before Time Runs Outggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg! 💥</span>
+            <span>💥 Grab the Best Deals Before Time Runs Out! 💥</span>
             Click Me! ▶️
           </Link>
         </Marquee>
