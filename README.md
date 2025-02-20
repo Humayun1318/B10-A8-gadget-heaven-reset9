@@ -1,4 +1,3 @@
-# README.md
 
 # GadgetHeaven ✨
 
@@ -13,7 +12,7 @@ The ultimate platform for discovering and purchasing cutting-edge gadgets!
 
 ## 📖 Project Overview
 
-GadgetHeaven is a fully functional **e-commerce platform** built with React and Vite. It allows users to browse and purchase gadgets, manage a shopping cart and wishlist, and sort/filter products effectively. The project follows a structured UI/UX design inspired by Figma, ensuring a seamless user experience.
+GadgetHeaven is a fully functional **e-commerce platform** built with React and Vite. It allows users to browse and purchase gadgets, manage a shopping cart and wishlist, and sort/filter products effectively. The project follows a structured UI/UX design, ensuring a seamless user experience.
 
 ---
 
@@ -21,7 +20,7 @@ GadgetHeaven is a fully functional **e-commerce platform** built with React and 
 
 ### 🏠 Home Page
 
-- Beautiful **banner** with a CTA button leading to the dashboard.
+- Beautiful **banner** with some navigation nav link leading to the dashboard and statistics.
 - **Sidebar categories** to filter products dynamically.
 - **Product cards** displaying essential details with quick access to details.
 
