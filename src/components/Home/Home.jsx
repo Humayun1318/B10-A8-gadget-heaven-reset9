@@ -2,7 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 import bannerImg from '../../assets/banner.jpg'
 import Sidebar from './Sidebar/Sidebar';
 import Banner from '../Banner/Banner';
-import { Button } from '@headlessui/react';
+import Marquee from 'react-fast-marquee';
 
 
 const Home = () => {
@@ -12,22 +12,18 @@ const Home = () => {
  
  
   return (
-    <div className='-mt-[600px] '>
+    <div className='-mt-[600px] scroll-smooth'>
       <div className='text-center bg-white mb-6 space-y-6 opacity-70'>
-        <Link to="deals"
-          className='font-extrabold text-5xl'>
-          <span>▶️Click Me! </span>
-          Today's Hot Deals!     
-          <span>Click Me!▶️ </span>
-        </Link>
-        {/* <Button className='mb-4 '>
-          <Link to="/deals"
-            className='rounded-2xl bg-gray-400 py-4 px-8'
-          >See All Deals
+        <Marquee speed={100} gradient={true} pauseOnHover={true}>
+          <Link to="/deals" className="font-extrabold text-2xl text-red-500 mx-4">
+            ▶️ Click Me!
+            <span>🔥 Today's Hot Deals! 🔥"</span>
+            <span>Limited Time Offer! Hurry Up! 🚀</span>
+            <span>💥 Grab the Best Deals Before Time Runs Out! 💥</span>
+            Click Me! ▶️
           </Link>
-        </Button> */}
+        </Marquee>
       </div>
-
       <div className='mb-8'>
         <Banner></Banner>
       </div>
@@ -37,14 +33,14 @@ const Home = () => {
             <img src={bannerImg} alt="" className='rounded-3xl h-full w-full object-cover' />
           </div>
           {/* Dynamic card */}
-          <section className='sm:w-[90%] lg:w-[80%] mx-auto  mt-8 mb-40 px-8 sm:px-0'>
+          <section className='sm:w-[90%] lg:w-[80%] mx-auto  mt-8 mb-40 px-8 sm:px-0' id=''>
             <h2 className='text-center text-2xl lg:text-4xl font-bold text-[#0B0B0B] mb-10'>Explore Cutting-Edge Gadgets</h2>
             {/* card container */}
-            <div className='flex gap-6 flex-col lg:flex-row'>
+            <div className='flex gap-6 flex-col lg:flex-row' id='products'>
               <div>
                 <Sidebar></Sidebar>
               </div>
-              <div>
+              <div >
                 <Outlet ></Outlet>
               </div>
             </div>

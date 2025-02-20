@@ -19,7 +19,7 @@ const Sidebar = () => {
       <div className='grid   p-6 bg-[#fff] border border-solid border-[#09080F1A] rounded-2xl gap-6'>
         <NavLink
           className={({ isActive }) =>
-            `py-2 lg:py-4 px-3 lg:px-7 rounded-4xl bg-[#09080F0D] ${isActive ? "bg-blue-500" : ""
+            `py-2 lg:py-4 px-3 lg:px-7 rounded-4xl bg-[#09080F0D] ${isActive ? "bg-[#9538E2] text-white" : ""
             }`
           }
           to={`/`}
@@ -29,7 +29,7 @@ const Sidebar = () => {
             key={idx}
             to={`category/${category}`}
             className={({ isActive }) =>
-              `py-2 lg:py-4 px-3 lg:px-7 rounded-4xl bg-[#09080F0D] ${isActive ? "bg-blue-500" : ""
+              `py-2 lg:py-4 px-3 lg:px-7 rounded-4xl bg-[#09080F0D] ${isActive ? "bg-[#9538E2] text-white" : ""
               }`
             }
           >
