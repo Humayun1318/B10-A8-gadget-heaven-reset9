@@ -5,7 +5,7 @@ The ultimate platform for discovering and purchasing cutting-edge gadgets!
 
 ## 📌 Live Website & Documentation
 
-- **Live Website:** [https://bgadgetheaven-humayun1318.netlify.app/]
+- **Live Website:** [https://gadgetheaven-humayun1318.netlify.app/]
 - **Requirement Document:** [https://github.com/Humayun1318/B10-A8-gadget-heaven-reset9/blob/main/RequirementDocument.pdf]
 
 ---

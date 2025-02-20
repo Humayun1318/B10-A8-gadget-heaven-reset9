@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import NavbarLinks from './NavLinks';
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
-import {  useLocation, useNavigate } from 'react-router-dom';
+import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import { DataContext } from '../../Context/context';
 
 const Navbar = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
               <NavbarLinks></NavbarLinks>
             </ul>
           </div>
-          <a className="btn btn-ghost  lg:text-xl font-bold">Gadget Heaven</a>
+          <Link to='/' className="btn btn-ghost  lg:text-xl font-bold">Gadget Heaven</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
