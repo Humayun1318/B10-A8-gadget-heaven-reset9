@@ -81,7 +81,7 @@ Ensure you have **Node.js** and **npm** installed.
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/Humayun1318/B10-A8-gadget-heaven-reset9
+git clone https://github.com/Humayun1318/gadget-heaven.git
 cd B10-A8-gadget-heaven-reset9
 ```
 
