@@ -82,7 +82,7 @@ Ensure you have **Node.js** and **npm** installed.
 
 ```sh
 git clone https://github.com/Humayun1318/gadget-heaven.git
-cd B10-A8-gadget-heaven-reset9
+cd gadget-heaven
 ```
 
 ### Install Dependencies
@@ -119,7 +119,11 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 
 ---
 
-## 📞 Contact
+## 📬 Contact
 
-For queries, reach out at [[humayunkabir6267@gmail.com](mailto\:humayunkabir6267@gmail.com)] or visit our [GitHub Repository](https://github.com/Humayun1318/B10-A8-gadget-heaven-reset9).
+**Project Maintainer:** Humayun Kabir          
+📧 Email: humayunkabir6267@gmail.com  
+🐙 GitHub: [@Humayun1318](https://github.com/Humayun1318)
+
+Thank you for exploring **Gadget Heaven** — contributions, feedback, and ideas are always welcome! 🚀
 
